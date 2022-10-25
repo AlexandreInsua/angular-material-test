@@ -1,3 +1,5 @@
+testing github actions setting branches and PR
+
 1 uninstall karma
 npm uninstall @types/jasmine jasmine-core karma karma-chrome-launcher karma-coverage karma-jasmine karma-jasmine-html-reporter
 
