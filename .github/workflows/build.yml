@@ -16,11 +16,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-      with:
-        name: "Copying files"
     - uses: actions/setup-node@v2
-      with:
-        name: "Setup Enviroment"
     - name: Install dependencies
       run: npm i --legacy-peer-deps
     - name: Check format
