@@ -1,8 +1,9 @@
 {
   "name": "materials-test",
-  "version": "0.0.0",
+  "version": "2",
   "scripts": {
-    "lint": "eslint src --ext .html .sass .ts",
+    "lint": "eslint",
+    "lint:src": "eslint src --ext .html .ts",
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
