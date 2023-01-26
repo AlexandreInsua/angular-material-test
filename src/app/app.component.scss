@@ -1,0 +1,14 @@
+$header-height: 54px;
+
+header {
+  height: $header-height;
+}
+.example-container
+{  position: absolute;
+  top: $header-height;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #eee;}
+
+
