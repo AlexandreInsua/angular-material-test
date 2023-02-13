@@ -13,19 +13,6 @@ updates:
       - 'frontend'
     open-pull-requests-limit: 10
 
-  - package-ecosystem: 'npm'
-    directory: '/'
-    schedule:
-      interval: 'daily'
-      time: "01:00"
-    labels:
-      - "angular"
-    allowed-configurations:
-     - package-name: "angular"
-       type: "version"
-
-    open-pull-requests-limit: 10
-
   - package-ecosystem: 'github-actions'
     directory: '/'
     schedule:
