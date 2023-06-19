@@ -6,6 +6,8 @@ updates:
     schedule:
       interval: 'daily'
       time: "01:00"
+    ignore:
+      - dependency-name: '@angular*'
     commit-message:
       prefix: 'build'
     labels:
