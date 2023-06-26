@@ -10,7 +10,8 @@
     "watch": "ng build --watch --configuration development",
     "test": "jest",
     "test:watch": "jest --watch",
-    "test:coverage": "jest --coverage"
+    "test:coverage": "jest --coverage",
+    "update": "rm -fr node_modules/ && rm package-lock.json && npm i"
   },
   "private": true,
   "dependencies": {
