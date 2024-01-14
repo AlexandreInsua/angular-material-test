@@ -2,4 +2,8 @@ mat-toolbar {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+
+  div h1 {
+    margin: 0;
+  }
 }

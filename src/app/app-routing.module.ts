@@ -10,7 +10,7 @@ const routes: Routes = [
     component: HomeComponent,
   },
   {
-    path: 'tables',
+    path: 'table',
     component: TableComponent,
   },
   {
