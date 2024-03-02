@@ -1,28 +1,28 @@
 version: 2
 
 updates:
-  - package-ecosystem: 'npm'
-    directory: '/'
+  - package-ecosystem: "npm"
+    directory: "/"
     schedule:
-      interval: 'daily'
+      interval: "daily"
       time: "01:00"
     ignore:
-      - dependency-name: '@angular*'
+      - dependency-name: "@angular*"
     commit-message:
-      prefix: 'build'
+      prefix: "build"
     labels:
-      - 'dependabot'
-      - 'frontend'
-    open-pull-requests-limit: 10
+      - "dependabot"
+      - "frontend"
+    open-pull-requests-limit: 20
 
-  - package-ecosystem: 'github-actions'
-    directory: '/'
+  - package-ecosystem: "github-actions"
+    directory: "/"
     schedule:
-      interval: 'daily'
+      interval: "daily"
       time: "01:00"
     commit-message:
-      prefix: 'build'
+      prefix: "build"
     labels:
-      - 'dependabot'
-      - 'github-actions'
-    open-pull-requests-limit: 10
+      - "dependabot"
+      - "github-actions"
+    open-pull-requests-limit: 20
