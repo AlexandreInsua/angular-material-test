@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 import { TableComponent } from './components/table/table.component';
 import { PrivateComponent } from './components/private/private.component';
+import { loginGuard } from './guards/login.guard';
 
 const routes: Routes = [
   {
@@ -15,6 +16,7 @@ const routes: Routes = [
   },
   {
     path: 'private',
+    canActivate: [loginGuard],
     component: PrivateComponent,
   },
   {

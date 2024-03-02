@@ -1,10 +1,13 @@
 import { Component, inject } from '@angular/core';
 import { UserService } from 'src/app/services/user.service';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss'],
+    selector: 'app-login',
+    templateUrl: './login.component.html',
+    styleUrls: ['./login.component.scss'],
+    standalone: true,
+    imports: [MatButtonModule],
 })
 export class LoginComponent {
   public color: string = 'warn';
