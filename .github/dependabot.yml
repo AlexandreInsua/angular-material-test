@@ -6,8 +6,13 @@ updates:
     schedule:
       interval: "daily"
       time: "01:00"
-    ignore:
-      - dependency-name: "@angular*"
+    groups:
+      Angular:
+        patterns:
+          - "@angular"
+      Typescript-slint:
+        patterns:
+          - "@typescript-eslint"
     commit-message:
       prefix: "build"
     labels:
