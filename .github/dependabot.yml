@@ -7,12 +7,12 @@ updates:
       interval: "daily"
       time: "01:00"
     groups:
-      Angular:
+      angular:
         patterns:
-          - "@angular"
-      Typescript-slint:
+          - "@angular*"
+      typescript-eslint:
         patterns:
-          - "@typescript-eslint"
+          - "@typescript-eslint*"
     commit-message:
       prefix: "build"
     labels:
