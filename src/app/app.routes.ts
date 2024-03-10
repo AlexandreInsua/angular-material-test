@@ -3,7 +3,7 @@ import { HomeComponent } from './components/home/home.component';
 import { TableComponent } from './components/table/table.component';
 import { loginGuard } from './guards/login.guard';
 import { PrivateComponent } from './components/private/private.component';
-import { DragdropComponent } from './dragdrop/dragdrop.component';
+import { KanbanComponent } from './components/kanban/kanban.component';
 
 export const routes: Routes = [
   {
@@ -23,9 +23,9 @@ export const routes: Routes = [
     title: 'private',
   },
   {
-    path: 'drag-and-drop',
-    component: DragdropComponent,
-    title: 'drag and drop',
+    path: 'kanban',
+    component: KanbanComponent,
+    title: 'kanban',
   },
   {
     path: '**',

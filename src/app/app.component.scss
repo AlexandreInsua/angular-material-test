@@ -12,12 +12,30 @@ header {
   background: #eee;
 
   mat-sidenav {
-    width: 250px;
+    background-color: aliceblue;
+    width: 200px;
 
     h2 {
-      padding: 15px;
+      padding: 15px 15px 0;
       margin: 0;
       text-align: center;
+    }
+
+    ul {
+      padding: unset;
+      li {
+        padding: 0.5rem 2rem;
+        list-style: none;
+        text-transform: capitalize;
+        &:hover {
+          background-color: rgba(215, 215, 215, 1);
+          font-weight: bold;
+        }
+        a {
+          color: inherit;
+          text-decoration: none;
+        }
+      }
     }
   }
 }
