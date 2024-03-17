@@ -4,15 +4,20 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
+import { HeaderComponent } from './components/header/header.component';
+import { LoginComponent } from './components/login/login.component';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule, MatToolbarModule, MatSidenavModule,NoopAnimationsModule
-      ],
-      declarations: [
-        AppComponent
+        RouterTestingModule,
+        MatToolbarModule,
+        MatSidenavModule,
+        NoopAnimationsModule,
+        HeaderComponent,
+        LoginComponent,
+        AppComponent,
       ],
     }).compileComponents();
   });
@@ -22,6 +27,4 @@ describe('AppComponent', () => {
     const app = fixture.componentInstance;
     expect(app).toBeTruthy();
   });
-
-
 });
