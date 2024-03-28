@@ -10,6 +10,9 @@ updates:
       angular:
         patterns:
           - "@angular*"
+      babel:
+        patterns:
+          - "@babel*"
       typescript-eslint:
         patterns:
           - "@typescript-eslint*"
