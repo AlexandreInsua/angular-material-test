@@ -11,6 +11,11 @@ import {
   VERSION as MAT_VERSION,
   MatNativeDateModule,
 } from '@angular/material/core';
+import { FormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { MatFormFieldModule } from '@angular/material/form-field';
+
 console.info('Angular CDK version', CDK_VERSION.full);
 console.info('Angular Material version', MAT_VERSION.full);
 
@@ -23,7 +28,11 @@ export const appConfig: ApplicationConfig = {
       MatSidenavModule,
       MatToolbarModule,
       MatButtonModule,
-      MatNativeDateModule
+      MatNativeDateModule,
+      FormsModule,
+      MatFormFieldModule,
+      MatSelectModule,
+      MatInputModule
     ),
     provideAnimations(),
   ],

@@ -4,6 +4,7 @@ import { TableComponent } from './components/table/table.component';
 import { loginGuard } from './guards/login.guard';
 import { PrivateComponent } from './components/private/private.component';
 import { KanbanComponent } from './components/kanban/kanban.component';
+import { FormComponent } from './components/form/form.component';
 
 export const routes: Routes = [
   {
@@ -26,6 +27,11 @@ export const routes: Routes = [
     path: 'kanban',
     component: KanbanComponent,
     title: 'kanban',
+  },
+  {
+    path: 'form',
+    component: FormComponent,
+    title: 'Formulario',
   },
   {
     path: '**',
