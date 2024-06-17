@@ -3,6 +3,7 @@
     <mat-label>Favorite car</mat-label>
     <select matNativeControl [(ngModel)]="selectedCar" name="car" title="car">
       <option value="" selected></option>
+
       @for (car of cars; track car) {
       <option [value]="car.value">{{ car.viewValue }}</option>
       }
