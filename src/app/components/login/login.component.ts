@@ -16,8 +16,6 @@ export class LoginComponent {
 
   private userService: UserService = inject(UserService);
 
-  ngOnInit() {}
-
   toggleLog() {
     this.userService.isLogged = !this.userService.isLogged;
     if (this.userService.isLogged) {
