@@ -10,7 +10,7 @@ import { UserService } from '../../services/user.service';
   standalone: true,
   imports: [MatButtonModule],
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent {
   public color: string = 'warn';
   public label: string = 'login';
 
