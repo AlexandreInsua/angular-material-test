@@ -11,7 +11,7 @@
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
     "update": "rm -fr node_modules/ && rm package-lock.json && npm i --legacy-peer-deps",
-    "validate": "ng lint && ng test && ng build"
+    "validate": "ng lint && jest && ng build"
   },
   "private": true,
   "dependencies": {
