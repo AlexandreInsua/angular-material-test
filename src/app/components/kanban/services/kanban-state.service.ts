@@ -1,15 +1,13 @@
 import { Injectable } from '@angular/core';
 import { dummyBoard } from '../model/dummy-board.data';
 import { KanbanBoard } from '../model/kanban-board.data';
-import { KanbanList } from '../model/kanban-list.insterface';
-import { KanbanTask } from '../model/kanban-task.interface';
 
 @Injectable()
 export class KanbanStateService {
   public board: KanbanBoard = dummyBoard;
 
   constructor() {}
-
+  /*
   updateListTitle(list: KanbanList, newTitle: string): void {
     list.title = newTitle;
   }
@@ -46,4 +44,5 @@ export class KanbanStateService {
   }: TransferTaskData): void {
     transferArrayItem(fromList.tasks, toList.tasks, fromIndex, toIndex);
   }
+    */
 }
