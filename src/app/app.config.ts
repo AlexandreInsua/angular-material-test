@@ -25,13 +25,13 @@ export const appConfig: ApplicationConfig = {
     provideAnimations(),
     provideRouter(routes),
     importProvidersFrom(
-      DragDropModule,
       BrowserModule,
+      DragDropModule,
+      FormsModule,
       MatSidenavModule,
       MatToolbarModule,
       MatButtonModule,
       MatNativeDateModule,
-      FormsModule,
       MatFormFieldModule,
       MatSelectModule,
       MatInputModule
