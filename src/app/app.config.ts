@@ -3,6 +3,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { BrowserModule } from '@angular/platform-browser';
+import { MatIconModule } from '@angular/material/icon';
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { provideRouter } from '@angular/router';
 import { routes } from './app.routes';
@@ -12,6 +13,7 @@ import {
   MatNativeDateModule,
 } from '@angular/material/core';
 import { FormsModule } from '@angular/forms';
+import { MatDialogModule } from '@angular/material/dialog';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -31,10 +33,12 @@ export const appConfig: ApplicationConfig = {
       MatSidenavModule,
       MatToolbarModule,
       MatButtonModule,
+      MatDialogModule,
       MatNativeDateModule,
       MatFormFieldModule,
       MatSelectModule,
-      MatInputModule
+      MatInputModule,
+      MatIconModule
     ),
     provideAnimations(),
   ],

@@ -7,34 +7,36 @@ import {
   moveItemInArray,
   transferArrayItem,
 } from '@angular/cdk/drag-drop';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { MatButtonModule } from '@angular/material/button';
+import { MatDialog } from '@angular/material/dialog';
+import { MatIconModule } from '@angular/material/icon';
+import { TodoFormComponent } from './form/todo-form.component';
+import { Todo } from './model/todo';
+import { TodosService } from './services/todos.service';
 
 @Component({
   selector: 'app-kanban',
   standalone: true,
-  imports: [CdkDrag, CdkDropListGroup, CdkDropList, CdkDragPlaceholder],
+  imports: [
+    CdkDrag,
+    CdkDropListGroup,
+    CdkDropList,
+    CdkDragPlaceholder,
+    MatButtonModule,
+    MatIconModule,
+  ],
   templateUrl: './kanban.component.html',
   styleUrl: './kanban.component.scss',
 })
 export class KanbanComponent {
-  todo = ['Get to work', 'Pick up groceries', 'Go home', 'Fall asleep'];
+  private readonly dialog = inject(MatDialog);
+  private readonly todoService = inject(TodosService);
 
-  done = ['Get up', 'Brush teeth', 'Take a shower', 'Check e-mail', 'Walk dog'];
-
-  drop(event: CdkDragDrop<string[]>) {
-    if (event.previousContainer === event.container) {
-      moveItemInArray(
-        event.container.data,
-        event.previousIndex,
-        event.currentIndex
-      );
-    } else {
-      transferArrayItem(
-        event.previousContainer.data,
-        event.container.data,
-        event.previousIndex,
-        event.currentIndex
-      );
-    }
+  addTodo() {
+    const dialogRef = this.dialog.open(TodoFormComponent);
+    dialogRef.afterClosed().subscribe((todo: Todo) => {
+      this.todoService.saveTodo(todo);
+    });
   }
 }
