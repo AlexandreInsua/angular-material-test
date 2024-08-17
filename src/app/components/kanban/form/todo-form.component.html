@@ -1,6 +1,21 @@
 <h2 mat-dialog-title>Crear una tarefa</h2>
-<mat-dialog-content> Aquí vai un formulario </mat-dialog-content>
+<mat-dialog-content>
+  <form [formGroup]="form" class="task-form">
+    <mat-form-field class="title">
+      <mat-label>Título</mat-label>
+      <input matInput placeholder="Título da tarea" formControlName="title" />
+    </mat-form-field>
+
+    <mat-form-field class="description">
+      <mat-label>Descrición da tarefa</mat-label>
+      <textarea
+        matInput
+        placeholder="Descrición da tarefa"
+        formControlName="description"></textarea>
+    </mat-form-field>
+  </form>
+</mat-dialog-content>
 <mat-dialog-actions>
   <button color="warn" mat-flat-button mat-dialog-close>Pechar</button>
-  <button color="primary" mat-flat-button>Aceptar</button>
+  <button color="primary" mat-flat-button (click)="saveData()">Aceptar</button>
 </mat-dialog-actions>

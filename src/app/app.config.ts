@@ -12,7 +12,7 @@ import {
   VERSION as MAT_VERSION,
   MatNativeDateModule,
 } from '@angular/material/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
@@ -30,6 +30,7 @@ export const appConfig: ApplicationConfig = {
       BrowserModule,
       DragDropModule,
       FormsModule,
+      ReactiveFormsModule,
       MatSidenavModule,
       MatToolbarModule,
       MatButtonModule,
@@ -38,7 +39,8 @@ export const appConfig: ApplicationConfig = {
       MatFormFieldModule,
       MatSelectModule,
       MatInputModule,
-      MatIconModule
+      MatIconModule,
+      MatInputModule
     ),
     provideAnimations(),
   ],
