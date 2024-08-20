@@ -40,11 +40,8 @@ export class TodoFormComponent {
   fb = inject(FormBuilder);
 
   form = this.fb.group({
-    title: ['My title', { validators: [Validators.required] }],
-    description: [
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,',
-      { validators: [Validators.required] },
-    ],
+    title: ['', { validators: [Validators.required] }],
+    description: ['', { validators: [Validators.required] }],
   });
 
   constructor(public dialogRef: MatDialogRef<TodoFormComponent>) {}

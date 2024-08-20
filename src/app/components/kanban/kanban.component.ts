@@ -36,7 +36,7 @@ export class KanbanComponent {
   addTodo() {
     const dialogRef = this.dialog.open(TodoFormComponent);
     dialogRef.afterClosed().subscribe((todo: Todo) => {
-      this.todoService.saveTodo(todo);
+      if (todo) this.todoService.saveTodo(todo);
     });
   }
 }

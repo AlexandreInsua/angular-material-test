@@ -17,5 +17,11 @@
 </mat-dialog-content>
 <mat-dialog-actions>
   <button color="warn" mat-flat-button mat-dialog-close>Pechar</button>
-  <button color="primary" mat-flat-button (click)="saveData()">Aceptar</button>
+  <button
+    [disabled]="!form.valid"
+    color="primary"
+    mat-flat-button
+    (click)="saveData()">
+    Aceptar
+  </button>
 </mat-dialog-actions>
