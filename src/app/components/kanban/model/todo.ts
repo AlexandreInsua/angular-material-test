@@ -7,7 +7,7 @@ export interface Todo {
 }
 
 export enum TodoStatusEnum {
-  TODO = 'todo',
+  PENDING = 'pending',
   ACTIVE = 'active',
   DONE = 'done',
 }

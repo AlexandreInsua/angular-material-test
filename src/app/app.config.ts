@@ -18,6 +18,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import { MatCardModule } from '@angular/material/card';
 
 console.info('Angular CDK version', CDK_VERSION.full);
 console.info('Angular Material version', MAT_VERSION.full);
@@ -31,6 +32,7 @@ export const appConfig: ApplicationConfig = {
       DragDropModule,
       FormsModule,
       ReactiveFormsModule,
+      MatCardModule,
       MatSidenavModule,
       MatToolbarModule,
       MatButtonModule,
