@@ -1,5 +1,10 @@
+:host {
+  display: block;
+  height: 100%;
+}
 .container {
   width: 90%;
+  height: 90%;
   margin: auto;
   display: flex;
   gap: 2em;
