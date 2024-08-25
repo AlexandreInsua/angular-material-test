@@ -1,5 +1,12 @@
 :host {
   display: block;
   height: 90%;
-  border: 1px solid red;
+  background-color: beige;
+  border-radius: 1em;
+  .todo-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+  }
 }

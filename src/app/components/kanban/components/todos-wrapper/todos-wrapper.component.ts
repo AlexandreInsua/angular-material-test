@@ -1,7 +1,11 @@
 import { Component, Input } from '@angular/core';
 import { TodoComponent } from '../todo/todo.component';
 import { Todo } from '../../model/todo';
-import { CdkDropList } from '@angular/cdk/drag-drop';
+import {
+  CdkDragDrop,
+  CdkDropList,
+  moveItemInArray,
+} from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-todos-wrapper',
@@ -13,4 +17,8 @@ import { CdkDropList } from '@angular/cdk/drag-drop';
 export class TodostWrapperComponent {
   @Input() identifier!: string;
   @Input() todos!: Todo[];
+
+  drop(event: CdkDragDrop<Todo[]>) {
+    moveItemInArray(this.todos, event.previousIndex, event.currentIndex);
+  }
 }
