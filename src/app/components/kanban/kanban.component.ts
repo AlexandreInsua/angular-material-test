@@ -1,11 +1,8 @@
 import {
   CdkDrag,
-  CdkDragDrop,
   CdkDragPlaceholder,
   CdkDropList,
   CdkDropListGroup,
-  moveItemInArray,
-  transferArrayItem,
 } from '@angular/cdk/drag-drop';
 import { Component, inject, OnInit } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';

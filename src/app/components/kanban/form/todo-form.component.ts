@@ -1,13 +1,7 @@
-import { Component, Inject, inject } from '@angular/core';
-import {
-  FormBuilder,
-  FormControl,
-  ReactiveFormsModule,
-  Validators,
-} from '@angular/forms';
+import { Component, inject } from '@angular/core';
+import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import {
-  MAT_DIALOG_DATA,
   MatDialogActions,
   MatDialogClose,
   MatDialogContent,
@@ -16,10 +10,10 @@ import {
 } from '@angular/material/dialog';
 import { MatInputModule } from '@angular/material/input';
 
-interface DialogData {
-  title?: string | null | undefined;
-  description?: string | null | undefined;
-}
+// interface DialogData {
+//   title?: string | null | undefined;
+//   description?: string | null | undefined;
+// }
 
 @Component({
   selector: 'app-todo-form',
@@ -37,7 +31,7 @@ interface DialogData {
   styleUrl: './todo-form.component.scss',
 })
 export class TodoFormComponent {
-  fb = inject(FormBuilder);
+  fb: FormBuilder = inject(FormBuilder);
 
   form = this.fb.group({
     title: ['', { validators: [Validators.required] }],
