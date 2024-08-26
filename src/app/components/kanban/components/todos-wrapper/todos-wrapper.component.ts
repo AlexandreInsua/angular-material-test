@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { TodoComponent } from '../todo/todo.component';
 import { Todo } from '../../model/todo';
 import {
@@ -18,7 +18,10 @@ export class TodostWrapperComponent {
   @Input() identifier!: string;
   @Input() todos!: Todo[];
 
+  @Output() updatedList = new EventEmitter<Todo[]>();
+
   drop(event: CdkDragDrop<Todo[]>) {
     moveItemInArray(this.todos, event.previousIndex, event.currentIndex);
+    this.updatedList.emit(this.todos);
   }
 }

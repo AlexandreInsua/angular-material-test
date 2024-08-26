@@ -6,16 +6,16 @@ import * as uuid from 'uuid';
 })
 export class TodosService {
   TODOS_KEY = 'TODOS';
-  todos: Todo[] = [];
+  _todos: Todo[] = [];
 
   constructor() {
-    this.todos = JSON.parse(
+    this._todos = JSON.parse(
       window.localStorage.getItem(this.TODOS_KEY) || '[]'
     );
   }
 
   get pedingtodos() {
-    return this.todos.filter(todo => todo.status === TodoStatusEnum.PENDING);
+    return this._todos.filter(todo => todo.status === TodoStatusEnum.PENDING);
   }
 
   saveTodo(data: { title: string; description: string }) {
@@ -25,7 +25,14 @@ export class TodosService {
       createAt: new Date().getTime(),
       status: TodoStatusEnum.PENDING,
     };
-    this.todos.push(todo);
-    window.localStorage.setItem(this.TODOS_KEY, JSON.stringify(this.todos));
+    this._todos.push(todo);
+    window.localStorage.setItem(this.TODOS_KEY, JSON.stringify(this._todos));
+  }
+
+  saveTodosList(todos: Todo[]): void {
+    console.log(this._todos, todos);
+    this._todos = this._todos.filter(todo => !todos.includes(todo));
+    this._todos.push(...todos);
+    window.localStorage.setItem(this.TODOS_KEY, JSON.stringify(this._todos));
   }
 }

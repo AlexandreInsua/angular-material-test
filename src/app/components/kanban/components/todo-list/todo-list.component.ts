@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { TodostWrapperComponent } from '../todos-wrapper/todos-wrapper.component';
 import { Todo } from '../../model/todo';
 
@@ -13,4 +13,10 @@ export class TodoListComponent {
   @Input() title!: string;
   @Input() identifier!: string;
   @Input() todos!: Todo[];
+
+  @Output() updatedList = new EventEmitter<Todo[]>();
+
+  updateList(event: any): void {
+    this.updatedList.emit(event);
+  }
 }

@@ -37,7 +37,6 @@ export class KanbanComponent implements OnInit {
 
   ngOnInit(): void {
     this.pedingtodos = this.todoService.pedingtodos;
-    console.log(this.pedingtodos);
   }
 
   addTodo() {
@@ -45,5 +44,9 @@ export class KanbanComponent implements OnInit {
     dialogRef.afterClosed().subscribe((todo: Todo) => {
       if (todo) this.todoService.saveTodo(todo);
     });
+  }
+
+  updateList(event: Todo[]) {
+    this.todoService.saveTodosList(event);
   }
 }

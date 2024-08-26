@@ -2,4 +2,5 @@
 
 <app-todos-wrapper
   [identifier]="identifier"
-  [todos]="todos"></app-todos-wrapper>
+  [todos]="todos"
+  (updatedList)="updateList($event)"></app-todos-wrapper>

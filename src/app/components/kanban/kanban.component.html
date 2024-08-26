@@ -4,17 +4,20 @@
   <app-todo-list
     [title]="'TO DO'"
     [identifier]="'todo'"
-    [todos]="pedingtodos"></app-todo-list>
+    [todos]="pedingtodos"
+    (updatedList)="updateList($event)"></app-todo-list>
 
   <app-todo-list
     [title]="'ACTIVE'"
     [identifier]="'active'"
-    [todos]="activetodos"></app-todo-list>
+    [todos]="activetodos"
+    (updatedList)="updateList($event)"></app-todo-list>
 
   <app-todo-list
     [title]="'DONE'"
     [identifier]="'done'"
-    [todos]="donetodos"></app-todo-list>
+    [todos]="donetodos"
+    (updatedList)="updateList($event)"></app-todo-list>
 </div>
 
 <button
