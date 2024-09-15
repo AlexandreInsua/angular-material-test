@@ -16,7 +16,7 @@ export class TodoListComponent {
 
   @Output() updatedList = new EventEmitter<Todo[]>();
 
-  updateList(event: any): void {
+  updateList(event: Todo[]): void {
     this.updatedList.emit(event);
   }
 }
