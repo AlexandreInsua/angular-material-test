@@ -1,0 +1,9 @@
+<div
+  class="todo-container"
+  cdkDropList
+  [cdkDropListData]="todos"
+  (cdkDropListDropped)="drop($event)">
+  @for (todo of todos; track todo) {
+    <app-todo [todo]="todo"></app-todo>
+  }
+</div>

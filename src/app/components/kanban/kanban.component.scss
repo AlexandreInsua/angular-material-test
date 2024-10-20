@@ -1,0 +1,21 @@
+:host {
+  display: block;
+  height: 100%;
+}
+.container {
+  width: 90%;
+  margin: 0 auto;
+  height: 90%;
+
+  display: flex;
+  gap: 2em;
+
+  app-todo-list {
+    flex: 1 1 calc(100% / 3);
+  }
+}
+.add {
+  position: absolute;
+  top: 1em;
+  right: 1em;
+}
