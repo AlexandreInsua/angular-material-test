@@ -20,3 +20,5 @@ npm uninstall @types/jasmine jasmine-core karma karma-chrome-launcher karma-cove
 9 create test cases
 
 10 run test cases and chech coverage report
+
+solve test
