@@ -21,4 +21,4 @@ npm uninstall @types/jasmine jasmine-core karma karma-chrome-launcher karma-cove
 
 10 run test cases and chech coverage report
 
-solve test
+Solve test and close issue
