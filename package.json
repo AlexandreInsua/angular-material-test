@@ -39,7 +39,7 @@
     "@angular-eslint/schematics": "19.3.0",
     "@angular-eslint/template-parser": "19.3.0",
     "@babel/core": "7.27.1",
-    "@babel/preset-env": "7.27.1",
+    "@babel/preset-env": "7.27.2",
     "@babel/preset-typescript": "7.27.1",
     "@types/node": "22.15.3",
     "@typescript-eslint/eslint-plugin": "8.31.1",
