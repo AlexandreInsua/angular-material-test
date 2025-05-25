@@ -1,0 +1,6 @@
+<h2>{{ title }}</h2>
+
+<app-todos-wrapper
+  [identifier]="identifier"
+  [todos]="todos"
+  (updatedList)="updateList($event)"></app-todos-wrapper>

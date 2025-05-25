@@ -1,1 +1,29 @@
-<p>kanban works!</p>
+<h2>Tasks list</h2>
+
+<div class="container" cdkDropListGroup>
+  <app-todo-list
+    [title]="'TO DO'"
+    [identifier]="'todo'"
+    [todos]="pedingtodos"
+    (updatedList)="updateList($event)"></app-todo-list>
+
+  <app-todo-list
+    [title]="'ACTIVE'"
+    [identifier]="'active'"
+    [todos]="activetodos"
+    (updatedList)="updateList($event)"></app-todo-list>
+
+  <app-todo-list
+    [title]="'DONE'"
+    [identifier]="'done'"
+    [todos]="donetodos"
+    (updatedList)="updateList($event)"></app-todo-list>
+</div>
+
+<button
+  class="add"
+  mat-mini-fab
+  aria-label="Example icon button with a delete icon"
+  (click)="addTodo()">
+  <mat-icon>add</mat-icon>
+</button>
