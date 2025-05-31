@@ -1,0 +1,17 @@
+:host {
+  mat-card {
+    width: calc(100% - 2em);
+
+    height: calc(100% - 2em);
+    margin: 1em;
+    border-radius: 0.5em;
+
+    .example-full-width {
+      width: 100%;
+    }
+  }
+
+  mat-card-footer {
+    text-align: center;
+  }
+}
