@@ -3,10 +3,23 @@
     <mat-card-title>Performing a request</mat-card-title>
   </mat-card-header>
   <mat-card-content>
-    <mat-form-field class="example-full-width">
-      <mat-label>Leave a comment</mat-label>
-      <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
-    </mat-form-field>
+    <div class="response">
+      @if (init) {
+        <p>Click on button to do the request.</p>
+      }
+
+      @if (waiting) {
+        <p>Waiting for a response...</p>
+      }
+
+      @if (errorMessage) {
+        <p>{{ errorMessage }}</p>
+      }
+
+      @if (successMessage) {
+        <p>{{ successMessage }}</p>
+      }
+    </div>
   </mat-card-content>
   <mat-card-footer>
     <button matButton="filled" (click)="performRequest()">Request!</button>

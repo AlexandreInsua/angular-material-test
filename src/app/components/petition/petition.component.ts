@@ -1,11 +1,20 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule } from '@angular/forms';
-import { HttpClient } from '@angular/common/http';
-import { of, retry, timer } from 'rxjs';
+import { HttpClient, HttpStatusCode } from '@angular/common/http';
+import {
+  catchError,
+  debounce,
+  delay,
+  EMPTY,
+  retry,
+  Subject,
+  switchMap,
+  timer,
+} from 'rxjs';
 
 @Component({
   selector: 'app-petition',
@@ -19,23 +28,50 @@ import { of, retry, timer } from 'rxjs';
   templateUrl: './petition.component.html',
   styleUrl: './petition.component.scss',
 })
-export class PetitionComponent {
+export class PetitionComponent implements OnInit {
+  init = true;
+  waiting = false;
+  errorMessage = '';
+  successMessage = '';
+
+  private click$ = new Subject<void>();
   private readonly http: HttpClient = inject(HttpClient);
 
-  performRequest() {
-    this.http
-      .get('http://demo3559982.mockable.io/test')
+  ngOnInit(): void {
+    this.click$
       .pipe(
-        retry({
-          count: 10,
-          delay: (error: any, retryCounter: number) => {
-            console.log(
-              `Error ${error?.code} Retry: ${retryCounter} ${new Date()}`
-            );
-            return timer(2000);
-          },
-        })
+        delay(1000),
+        switchMap(() =>
+          this.http.get('http://demo3559982.mockable.io/test').pipe(
+            retry({
+              count: 10,
+              delay: (error: any, retryCounter: number) => {
+                if (error?.status === HttpStatusCode.Conflict) {
+                  this.waiting = false;
+                  this.errorMessage = `Error ${error?.status} Retry: ${retryCounter} ${new Date().toLocaleTimeString()}`;
+                  return timer(2000);
+                }
+                throw error;
+              },
+            }),
+            catchError(error => {
+              this.errorMessage = `Fatal error ${error?.status} ${new Date().toLocaleTimeString()}`;
+              console.error(this.errorMessage);
+              return EMPTY;
+            })
+          )
+        )
       )
-      .subscribe(response => console.log(response));
+      .subscribe((response: any) => {
+        this.waiting = false;
+        this.errorMessage = '';
+        this.successMessage = response.msg;
+      });
+  }
+
+  performRequest() {
+    this.init = false;
+    this.waiting = true;
+    this.click$.next();
   }
 }

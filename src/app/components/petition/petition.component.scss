@@ -6,12 +6,25 @@
     margin: 1em;
     border-radius: 0.5em;
 
-    .example-full-width {
-      width: 100%;
+    .response {
+      max-width: 100%;
+      margin: 1em 0;
+      padding: 1em;
+      height: 7em;
+      border: solid 1px dodgerblue;
+      border-radius: 0.5em;
+      box-shadow: 1px 1px 0.25em dodgerblue;
+      p {
+        font-family: 'Courier New', Courier, monospace;
+      }
     }
   }
 
   mat-card-footer {
     text-align: center;
+    button {
+      background-color: dodgerblue;
+      color: white;
+    }
   }
 }
