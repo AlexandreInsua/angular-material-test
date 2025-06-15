@@ -1,0 +1,28 @@
+$custom-background-color: rgba(255, 255, 255, 0.8);
+:host {
+  display: block;
+  height: 100%;
+
+  div {
+    height: calc(100% - 4rem);
+    padding: 2rem;
+    background-image:
+      linear-gradient($custom-background-color, $custom-background-color),
+      url('https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg');
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    text-align: center;
+
+    h2,
+    p:first-of-type {
+      margin-top: 2rem;
+    }
+    p {
+      font-size: 1.1rem;
+      line-height: 1.5;
+    }
+  }
+}
