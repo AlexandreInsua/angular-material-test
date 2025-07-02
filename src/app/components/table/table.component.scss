@@ -1,0 +1,11 @@
+:host {
+  display: block;
+  width: 100%;
+
+  mat-card {
+    margin: 1em;
+    border: 1px solid dodgerblue;
+    border-radius: 1/2em;
+    box-shadow: 0 2px 5px dodgerblue;
+  }
+}
