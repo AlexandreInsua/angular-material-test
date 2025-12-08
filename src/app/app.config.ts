@@ -1,4 +1,8 @@
-import { ApplicationConfig, importProvidersFrom } from '@angular/core';
+import {
+  ApplicationConfig,
+  importProvidersFrom,
+  provideZoneChangeDetection,
+} from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -23,13 +27,13 @@ console.info('Angular Material version', MAT_VERSION.full);
 
 export const appConfig: ApplicationConfig = {
   providers: [
+    provideZoneChangeDetection(),
     provideAnimations(),
     provideRouter(routes),
     provideHttpClient(),
     importProvidersFrom(
       BrowserModule,
       FormsModule,
-
       MatButtonModule,
       MatCardModule,
       MatFormFieldModule,
