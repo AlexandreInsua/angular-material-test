@@ -2,7 +2,7 @@ import { TestBed } from '@angular/core/testing';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { RouterTestingModule } from '@angular/router/testing';
+import { provideRouter } from '@angular/router';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { LoginComponent } from './components/login/login.component';
@@ -11,7 +11,6 @@ describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule,
         MatToolbarModule,
         MatSidenavModule,
         NoopAnimationsModule,
@@ -19,6 +18,7 @@ describe('AppComponent', () => {
         LoginComponent,
         AppComponent,
       ],
+      providers: [provideRouter([{ path: '', component: AppComponent }])],
     }).compileComponents();
   });
 
